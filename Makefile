@@ -7,7 +7,5 @@ build:
 	podman build -f Dockerfile --platform=linux/amd64 -t docker.io/imroc/grpc_server:latest
 	podman push docker.io/imroc/grpc_server:latest
 	rm server
-rsync:
-	rsync -av ./ dev:/root/grpc-demo
 restart:
 	kubectl rollout restart deployments.v1.apps/server
